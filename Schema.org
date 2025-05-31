@@ -1,0 +1,22 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "RapiClean Puebla",
+  "image": "https://rapicleanpuebla.com/img/logo-icon/logo.png",
+  "telephone": "+52-221-127-6404",
+  "email": "austintv52@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Puebla",
+    "addressRegion": "PUE",
+    "addressCountry": "MX"
+  },
+  "url": "https://rapicleanpuebla.com",
+  "sameAs": [
+    "https://www.facebook.com/rapicleanpuebla",
+    "https://www.instagram.com/rapicleanpuebla/"
+  ],
+  "openingHours": "Mo-Sa 09:00-18:00"
+}
+</script>

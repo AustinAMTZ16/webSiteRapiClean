@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Solución Integral - Diseño Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+        :root {
+            --seccionSecundaria: rgba(192, 192, 192);
+            --seccionPrimaria: rgba(0, 174, 239);
+            --seccionTercera: #f6f3f5;
+            --botones-color: rgba(255, 204, 0);
+            --primary-color: rgb(0, 0, 0);
+            --text-dark: rgb(0, 0, 0);
+            --text-blanco: rgb(255, 255, 255);
+            --size-text-menu: 1.5rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', Roboto, Montserrat;
+        }
+
+        /* Estilos comunes */
+        .card {
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px var(--seccionPrimaria);
+        }
+        .card a {
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        .card-img {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .card-img img{
+            width: 60%;
+            justify-content: center;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: var(--seccionPrimaria);
+        }
+
+        .btn-primary {
+            background: var(--botones-color);
+            color: var(--text-dark)
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Header superior */
+        .header-top {
+            background: var(--seccionPrimaria);
+            padding: 8px 0;
+            color: var(--text-dark);
+        }
+        .header-top a {
+            color: var(--text-dark) !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .header-top a:hover {
+            color: var(--text-blanco) !important;
+        }
+        /* Header superior */
+
+
+        /* Header principal */
+        .header-area {
+            padding: 20px 0;
+            background: var(--seccionTercera);
+            position: relative;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            align-items: center;
+        }
+        .logo img {
+            width: 30%;
+        }
+        /* Header principal */
+        /* Menú de navegación */
+        .main-menu {
+            text-align: right;
+        }
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            justify-content: flex-end;
+        }
+        .nav-link {
+            color: var(--text-dark);
+            font-size: var(--size-text-menu);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: var(--seccionPrimaria) !important;
+        }
+        /* Menú de navegación */
+        /* Menú móvil */
+        .mobile-menu {
+            display: none;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+            background: var(--botones-color);
+            transition: all 0.3s ease;
+        }
+        /* Menú móvil */
+
+
+        /* Hero Carrusel */
+        .hero-carousel {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            z-index: 0;
+        }
+
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .carousel-content {
+            background: rgba(0, 0, 0, 0.55);
+            width: 100%;
+            height: 100%; /* Ocupa el 100% del alto del slide */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-blanco);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            background: var(--botones-color);
+            border: none;
+            color: var(--text-blanco);
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-control:hover {
+            background: var(--seccionPrimaria);
+        }
+
+        .carousel-control.prev {
+            left: 2rem;
+        }
+
+        .carousel-control.next {
+            right: 2rem;
+        }
+
+        /* Sección Beneficios */
+        .benefits-section {
+            padding: 5rem 2rem;
+            background: var(--seccionTercera);
+        }
+        /* Sección Acerca de */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 5rem 2rem;
+            background: var(--seccionPrimaria);
+            color: white;
+        }
+        .about-content{
+            text-align: center;
+        }
+
+        /* Sección Servicios */
+        .services {
+            gap: 2rem;
+            padding: 5rem 2rem;
+            background: var(--seccionTercera);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+
+        /* Testimonios */
+        .testimonials-section {
+            background: var(--seccionTercera);
+            padding: 5rem 2rem;
+        }
+
+        .testimonial-carousel {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Ventajas */
+        .advantages-grid {
+            padding: 5rem 2rem;
+            background: var(--seccionTercera);
+        }
+
+        /* Formulario Final */
+        .final-cta {
+            background: var(--seccionTercera);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: var(--text-dark);
+        }
+        .cta-form {
+            max-width: 500px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--seccionPrimaria);
+        }
+
+        .cta-form input {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--seccionPrimaria);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #ffffff;
+            color: #333;
+        }
+
+        .cta-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--seccionPrimaria);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #ffffff;
+            color: #333;
+        }
+
+        /* Contacto y FAQ */
+        .contact-section {
+            padding: 5rem 2rem;
+            background: var(--seccionTercera);
+        }
+        /* Estilos para FAQs */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .faq-card {
+            background: var(--text-light);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px var(--seccionPrimaria);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .faq-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .faq-card p {
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .btn-small {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Estilos para información de contacto */
+        .contact-card {
+            background: var(--text-light);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-card p {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .contact-social {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-social a {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* Iconos */
+        .fas, .fab {
+            font-size: 1.2rem;
+            color: var(--botones-color);
+        }
+
+        footer {
+            background: var(--seccionPrimaria);;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        footer a{
+            color: var(--botones-color);
+        }
+
+        /* Estilos para los botones flotantes */
+        .float-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn,
+        .back-to-top {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .back-to-top {
+            background: var(--seccionPrimaria);
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .whatsapp-btn:hover,
+        .back-to-top:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .float-buttons {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-btn,
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                font-size: 22px;
+            }
+        }
+        /* Añade estas media queries al final de tu CSS */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .nav-list {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .mobile-menu.active {
+                display: block;
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 250px;
+                height: 100vh;
+                background: white;
+                box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+                padding: 20px;
+                z-index: 1000;
+            }
+
+            .mobile-nav {
+                list-style: none;
+                margin-top: 50px;
+            }
+
+            .mobile-nav li {
+                margin: 15px 0;
+            }
+        }
+        @media (max-width: 1200px) {
+            /* Ajustes generales */
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+        @media (max-width: 992px) {
+            /* Hero Section */
+            .hero-carousel h1 {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            
+            .hero-carousel p {
+                font-size: 1.1rem;
+            }
+            
+            /* Testimonios */
+            .testimonial-carousel {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            /* Ventajas */
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            /* Header */
+            .logo img {
+                max-width: 140px;
+            }
+            
+            .header-top p {
+                font-size: 0.9rem;
+            }
+            
+            /* Hero Section */
+            .hero-carousel {
+                height: 70vh;
+            }
+            
+            .hero-carousel h1 {
+                font-size: 2rem;
+                padding: 0 15px;
+            }
+            
+            .carousel-control {
+                width: 35px;
+                height: 35px;
+                padding: 0.8rem;
+            }
+            
+            /* Secciones grid */
+            .benefits-grid,
+            .services-grid,
+            .testimonial-carousel,
+            .advantages-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+            
+            /* Acerca de */
+            .about-section {
+                grid-template-columns: 1fr;
+                padding: 3rem 1rem;
+            }
+            
+            .about-image {
+                order: 2;
+                margin-top: 2rem;
+            }
+            
+            /* Formulario */
+            .final-cta .container {
+                flex-direction: column;
+            }
+            
+            /* FAQ */
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Footer */
+            .social-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 576px) {
+            /* Ajustes móviles pequeños */
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            /* Header */
+            .header-top a {
+                display: block;
+                margin: 5px 0;
+            }
+            
+            /* Hero Section */
+            .hero-carousel {
+                height: 60vh;
+            }
+            
+            .hero-carousel h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-carousel p {
+                font-size: 1rem;
+            }
+            
+            /* Formulario */
+            .cta-form input {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+            
+            /* Mapa */
+            iframe {
+                height: 250px;
+            }
+            
+            /* Footer */
+            footer p {
+                font-size: 0.9rem;
+            }
+        }
+        /* Añade esto para mejorar la legibilidad en móviles */
+        @media (max-width: 400px) {
+            html {
+                font-size: 14px;
+            }
+            
+            .card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .faq-card h4 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 0. header Top, Logo, Menú -->
+    <header class="top">
+        <div class="header-top">
+            <div class="container">
+                <p>
+                    ¿TIENES ALGUNA PREGUNTA?
+                    <a href="tel:+522211276404">2211276404</a> /
+                    <a href="tel:+522211276404">2211276404</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="header-area">
+            <div class="container">
+                <div class="grid">
+                    <div class="logo">
+                        <a href="index.html"><img src="logo.png" alt="Logo"></a>
+                    </div>
+                    
+                    <div class="main-menu">
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li><a class="nav-link" href="index.html">Acerca de</a></li>
+                            <li><a class="nav-link" href="#servicios">Servicios</a></li>
+                            <li><a class="nav-link" href="#servicios">Blog</a></li>
+                            <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Menú hamburguesa móvil -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-nav">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="index.html">Acerca de</a></li>
+                <li><a class="nav-link" href="#servicios">Servicios</a></li>
+                <li><a class="nav-link" href="#servicios">Blog</a></li>
+                <li><a class="nav-link" href="#contacto">Contacto</a></li>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. Hero Carrusel -->
+    <section class="hero-carousel">
+        <!-- Flechas de navegación -->
+        <button class="carousel-control prev">&lt;</button>
+        <button class="carousel-control next">&gt;</button>
+        
+        <div class="carousel-slide active" style="background-image: url('carrrusel_uno.jpg');">
+            <div class="carousel-content">
+                <h1>¡Tu ropa limpia sin esfuerzo!</h1>
+                <p>Lava, seca y plancha sin perder tiempo. ¡Déjalo en nuestras manos!</p>
+                <button class="btn btn-primary">Haz tu pedido ahora</button>
+            </div>
+        </div>
+        <div class="carousel-slide active" style="background-image: url('carrrusel_dos.jpg');">
+            <div class="carousel-content">
+                <h1>Tu Lavandería de Confianza</h1>
+                <p>Ropa limpia, seca y lista para usar. ¡Fácil y rápido!</p>
+                <button class="btn btn-primary">Visitanos hoy</button>
+            </div>
+        </div>
+        <div class="carousel-slide active" style="background-image: url('carrrusel_tres.jpg');">
+            <div class="carousel-content">
+                <h1>Limpieza Express para tu Ropa</h1>
+                <p>Para quienes no tienen tiempo de lavar. ¡Déjanoslo a nosotros!</p>
+                <button class="btn btn-primary">escrubre nuestros Servicios</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Beneficios -->
+    <section class="benefits-section">
+        <h2 class="section-title">Nuestros Beneficios</h2>
+        <div class="benefits-grid">
+            <div class="card">
+                <i class="fas fa-rocket fa-3x"></i>
+                <h3>¿Por qué elegirnos? Rapidez, calidad y confianza en cada servicio.</h3>
+                <p>✅ Servicio en el mismo día <br>✅ Cuidado profesional de tu ropa <br>✅ Opciones ecológicas</p> <br>
+                <a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0" class="btn btn-primary">Ver precios</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-rocket fa-3x"></i>
+                <h3>Ahorra tiempo, gana comodidad</h3>
+                <p>Sin colas, sin esperas. ¡Nosotros nos encargamos! <br> ✅ Recoge tu ropa lista sin esfuerzo <br> ✅ Lavado con productos biodegradables <br> ✅ Personal capacitado</p><br>
+                <a href="https://maps.app.goo.gl/LVbz2hsLTwNgQoyF8" class="btn btn-primary">Prueba nuestro servicio</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-rocket fa-3x"></i>
+                <h3>Tu ropa en las mejores manos. Proceso Cuidasos y seguros para cada prensa</h3>
+                <p>✅ Higienización garantizada <br> ✅ Cuidado especializado por tipo de tela <br> ✅ Equipos de última tecnología</p><br>
+                <a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0" class="btn btn-primary">Solicita tu lavado</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Acerca de -->
+    <section class="about-section">
+        <div class="about-image">
+            <img src="logoprincipal.png" alt="Equipo" style="width:100%">
+        </div>
+        <div class="about-content">
+            <h2>Quiénes Somos</h2>
+            <p>Expertos en soluciones digitales con más de 10 años de experiencia</p>
+            <button class="btn btn-primary">Conocer más</button>
+        </div>
+    </section>
+
+    <!-- 4. Servicios-->
+    <section class="services">
+        <h2 class="section-title">Servicios</h2>
+        <div class="services-grid">
+            <div class="card">
+                <div class="card-img">
+                    <img src="servicio_uno.jpg" alt="">
+                </div>
+                <h3>Planchado Profesional</h3>
+                <ul>
+                    <li>Ropa impecable y sin arrugas</li>
+                    <li>Planchado a vapor para mayor protección</li>
+                    <li>Ideal para camisas, trajes y prendas delicadas</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="servicio_dos.jpg" alt="">
+                </div>
+                <h3>Costura y Tintorería</h3>
+                <ul>
+                    <li>Arreglo y ajuste de ropa a medida</li>
+                    <li>Eliminación de manchas difíciles</li>
+                    <li>Tratamientos especiales para prendas delicadas</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-img">
+                    <img src="servicio_tres.jpg" alt="">
+                </div>
+                <h3>Lavado y Secado</h3>
+                <ul>
+                    <li>Eliminación profunda de manchas y olores</li>
+                    <li>Lavado con detergentes ecológicos</li>
+                    <li>Secado eficiente sin dañar las prendas</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Ventajas-->
+    <section class="advantages-grid">
+        <h2 class="section-title">Nuestras Ventajas</h2>
+        <div class="benefits-grid">
+            <div class="card">
+                <i class="fas fa-medal fa-2x"></i>
+                <h3>La forma más rápida y cómoda de lavar tu ropa</h3>
+                <p>Olvídate de perder tiempo lavando, nosotros lo hacemos por ti.</p><br>
+                <a class="btn btn-primary" href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0">Pruébalo hoy mismo</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-medal fa-2x"></i>
+                <h3>Servicio de lavandería confiable y accesible</h3>
+                <p>Calidad profesional con precios justos y sin complicaciones.</p><br>
+                <a class="btn btn-primary" href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0">Consulta nuestras tarifas</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-medal fa-2x"></i>
+                <h3>Más que una lavandería: Tintorería y costura en un solo lugar</h3>
+                <p>Descubre nuestros servicios adicionales</p><br>
+                <a class="btn btn-primary" href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0">Pruébalo hoy mismo </a>
+            </div>
+        </div>
+        <!-- Agregar más ventajas -->
+         
+    </section>
+
+    <!-- 6. Testimonios-->
+    <section class="testimonials-section">
+        <h2 class="section-title">Testimonios</h2>
+        <div class="testimonial-carousel">
+            <div class="card">
+                <i class="fas fa-user fa-2x"></i>
+                <p>"Mi ropa siempre queda impecable y lista a tiempo. ¡Los recomiendo!"</p>
+                <h4>Cliente Satisfecho</h4>
+            </div>
+            <div class="card">
+                <i class="fas fa-user fa-2x"></i>
+                <p>"Como estudiante, no tengo tiempo de lavar, ¡Rapiclean me ha salvado!"</p>
+                <h4>Cliente Satisfecho</h4>
+            </div>
+            <div class="card">
+                <i class="fas fa-user fa-2x"></i>
+                <p>"El planchado es perfecto, siempre listo para mi oficina."</p>
+                <h4>Cliente Satisfecho</h4>
+            </div>
+            <div class="card">
+                <i class="fas fa-user fa-2x"></i>
+                <p>"Ropa limpia sin preocupaciones, ¡el mejor servicio!"</p>
+                <h4>Cliente Satisfecho</h4>
+            </div>
+            <!-- Agregar más testimonios -->
+        </div>
+    </section>
+
+    <!-- 7. Formulario CTA, MAP's -->
+    <section class="final-cta">
+        <div class="contact-info">
+            <h3 class="section-title">Contacto</h3>
+            <div class="container">
+                <p>austintv52@gmail.com</p>
+                <p>+52 221 127 64 04</p>
+                <form class="cta-form">
+                <h2>¡Comienza Ahora!</h2>
+                    <input type="text" placeholder="Ingresa tu nombre completo">
+                    <input type="text" placeholder="Ingresa tu telefono">
+                    <input type="email" placeholder="Ingresa tu email">
+                    <textarea name="comentarios" id="comentarios">Horario de contacto</textarea>
+                    <button class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.028072479301!2d-98.21571552456112!3d18.97436758220942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf37faa0076d%3A0xc2c6fefcb84ad40!2sdigiceo!5e0!3m2!1sen!2smx!4v1739131207453!5m2!1sen!2smx" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- 8. Faq-->
+    <section class="contact-section">
+        <div class="faq">
+            <h3 class="section-title">Preguntas Frecuentes</h3>
+            <div class="faq-grid">
+                <!-- Pregunta 1 -->
+                <div class="faq-card">
+                    <i class="fas fa-question fa-2x"></i>
+                    <h4>¿Cuánto tiempo tarda el servicio de lavado y secado?</h4>
+                    <p>Nuestro servicio estándar tiene un tiempo de entrega de 24 horas. Si necesitas tu ropa antes, consulta por nuestro servicio express.</p>
+                    <a href="#contacto" class="btn btn-small">Pregunta por nuestro servicio express</a>
+                </div>
+    
+                <!-- Pregunta 2 -->
+                <div class="faq-card">
+                    <i class="fas fa-question fa-2x"></i>
+                    <h4>¿Qué tipo de ropa puedo lavar con ustedes?</h4>
+                    <p>Lavamos desde ropa del día a día hasta prendas delicadas, edredones y ropa deportiva. Si tienes dudas, contáctanos.</p>
+                    <a href="#prendas" class="btn btn-small">Consulta qué prendas aceptamos</a>
+                </div>
+    
+                <!-- Pregunta 3 -->
+                <div class="faq-card">
+                    <i class="fas fa-question fa-2x"></i>
+                    <h4>¿Usan productos hipoalergénicos o biodegradables?</h4>
+                    <p>Sí, contamos con detergentes amigables con el medio ambiente y opciones hipoalergénicas. ¡Solo avísanos al dejar tu ropa!</p>
+                    <a href="#ecologico" class="btn btn-small">Pregunta por nuestras opciones ecológicas</a>
+                </div>
+    
+                <!-- Pregunta 4 -->
+                <div class="faq-card">
+                    <i class="fas fa-question fa-2x"></i>
+                    <h4>¿Cómo calculan el precio del servicio?</h4>
+                    <p>Nuestro servicio se cobra por kilo de ropa. También tenemos planes especiales para clientes frecuentes.</p>
+                    <a href="#tarifas" class="btn btn-small">Consulta nuestras tarifas y promociones</a>
+                </div>
+    
+                <!-- Pregunta 5 -->
+                <div class="faq-card">
+                    <i class="fas fa-question fa-2x"></i>
+                    <h4>¿Debo separar mi ropa por colores o tipos de tela?</h4>
+                    <p>No es necesario. Nuestro equipo se encarga de clasificarla para garantizar el mejor cuidado en el lavado.</p>
+                    <a href="#cuidado" class="btn btn-small">Conoce cómo cuidamos tu ropa</a>
+                </div>
+    
+                <!-- Pregunta 6 -->
+                <div class="faq-card">
+                    <i class="fas fa-question fa-2x"></i>
+                    <h4>¿Tienen servicio a domicilio?</h4>
+                    <p>Sí, ofrecemos recolección y entrega en ciertos horarios y zonas. Pregunta por disponibilidad en tu área.</p>
+                    <a href="#domicilio" class="btn btn-small">Agenda tu recolección</a>
+                </div>
+            </div>
+            <!-- Agregar FAQs -->
+        </div>
+    </section>
+    <!-- 9. Footer-->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/rapicleanpuebla"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/rapicleanpuebla/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© 2025 Todos los derechos reservados</p>
+    </footer>
+
+    <div class="float-buttons">
+        <a href="#" class="back-to-top" title="Volver al inicio">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+        
+        <a href="https://wa.me/5212211276404" class="whatsapp-btn" target="_blank" title="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            mobileMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Animación del hamburguesa
+            if(hamburger.classList.contains('active')) {
+                hamburger.children[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                hamburger.children[1].style.opacity = '0';
+                hamburger.children[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                hamburger.children[0].style.transform = 'none';
+                hamburger.children[1].style.opacity = '1';
+                hamburger.children[2].style.transform = 'none';
+            }
+        }
+
+        // Cerrar menú al hacer click fuera
+        window.addEventListener('click', function(e) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if(!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.children[0].style.transform = 'none';
+                hamburger.children[1].style.opacity = '1';
+                hamburger.children[2].style.transform = 'none';
+            }
+        });
+
+        // Cerrar menú al cambiar tamaño de pantalla
+        window.addEventListener('resize', function() {
+            if(window.innerWidth > 768) {
+                const mobileMenu = document.getElementById('mobileMenu');
+                const hamburger = document.querySelector('.hamburger');
+                
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.children[0].style.transform = 'none';
+                hamburger.children[1].style.opacity = '1';
+                hamburger.children[2].style.transform = 'none';
+            }
+        });
+
+        // Carrusel Hero
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
+        let autoPlay = true;
+        let interval;
+
+        function showSlide(n) {
+            currentSlide = (n + slides.length) % slides.length;
+            slides.forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+            resetInterval();
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(interval);
+            interval = setInterval(nextSlide, 5000);
+        }
+
+        // Event Listeners añadidos
+        prevButton.addEventListener('click', prevSlide);
+        nextButton.addEventListener('click', nextSlide);
+
+        // Iniciar intervalo
+        resetInterval();
+
+        // Animaciones al hacer scroll
+        window.addEventListener('scroll', () => {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if(cardTop < window.innerHeight * 0.8) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        // JavaScript para el botón de volver arriba
+        window.addEventListener('scroll', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Scroll suave al hacer clic
+        document.querySelector('.back-to-top').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
