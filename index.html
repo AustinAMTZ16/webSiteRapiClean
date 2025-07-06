@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="assets/js/Prospectos.js"></script>
+    <script src="assets/js/SesionUser.js"></script>
 </head>
 
 <body>
@@ -42,10 +43,27 @@
                     <div class="main-menu">
                         <ul class="nav-list">
                             <li><a class="nav-link" href="index.html">Inicio</a></li>
-                            <li><a class="nav-link" href="index.html">Acerca de</a></li>
-                            <li><a class="nav-link" href="#servicios">Servicios</a></li>
-                            <li><a class="nav-link" href="#servicios">Blog</a></li>
-                            <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                            <li><a class="nav-link" href="#about">Acerca de</a></li>
+                            <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
+                            <li><a class="nav-link" href="#contact-info">Contacto</a></li>
+                            <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita tu servicio</a>
+                            </li>
+                            <!-- <li><a class="nav-link btn btn-primary" id="CerrarSesion">Cerrar Sesión</a></li> -->
+                            <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
                         </ul>
                     </div>
 
@@ -63,10 +81,26 @@
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-nav">
                 <li><a class="nav-link" href="index.html">Inicio</a></li>
-                <li><a class="nav-link" href="index.html">Acerca de</a></li>
-                <li><a class="nav-link" href="#servicios">Servicios</a></li>
-                <li><a class="nav-link" href="#servicios">Blog</a></li>
-                <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li><a class="nav-link" href="#about">Acerca de</a></li>
+                <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
+                <li><a class="nav-link" href="#contact-info">Contacto</a></li>
+                <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita tu servicio</a>
+                            </li>
+                <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
             </div>
         </div>
     </header>
@@ -79,26 +113,25 @@
 
         <div class="carousel-slide active" style="background-image: url('assets/img/page/carrusel_1.png');">
             <div class="carousel-content">
-                <h1>Tu Lavandería de Confianza</h1>
-                <p>En el corazón de Puebla, tu ropa recibe el cuidado y cariño que merece. Olvídate de lavar y dedica tu
-                    tiempo a lo que realmente importa.</p>
-                <button class="btn btn-primary">Haz tu Pedido Ahora</button>
+                <h1 style="margin-top: 180px;">Sí, somos más caros... pero lavamos por ti.</h1>
+                <p>Vamos por tu ropa y la cuidamos como si fuera nuestra.</p>
+                <a href="catalogo.html"><button class="btn btn-primary">Solicita tu servicio ahora</button></a>
             </div>
         </div>
         <div class="carousel-slide active" style="background-image: url('assets/img/page/carrusel_2.png');">
             <div class="carousel-content">
-                <h1>Tu Ropa Lista Sin Esfuerzo</h1>
-                <p>Disfruta de tu rutina: estudia en la BUAP, pasea por el Zócalo o trabaja en Angelópolis mientras
-                    nosotros lavamos, secamos y doblamos tu ropa al instante.</p>
-                <button class="btn btn-primary">Haz tu Pedido Ahora</button>
+                <h1 style="margin-top: 180px;">Tu tiempo vale más que doblar ropa.</h1>
+                <p>Con RapiClean ahorras tiempo y esfuerzo. Nosotros nos encargamos.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5212211276404&text&type=phone_number&app_absent=0"
+                    target="_blank"><button class="btn btn-primary">Solicita tu servicio ahora</button></a>
             </div>
         </div>
         <div class="carousel-slide active" style="background-image: url('assets/img/page/carrusel_3.png');">
             <div class="carousel-content">
-                <h1>Express y Eco-Friendly</h1>
-                <p>Productos biodegradables, procesos rápidos y entrega exprés en toda la región de Puebla. Cuida tu
-                    ropa y al planeta sin mover un dedo.</p>
-                <button class="btn btn-primary">Descubre Nuestros Servicios</button>
+                <h1 style="margin-top: 180px;">Lavandería premium a domicilio en Puebla.</h1>
+                <p>Recolección y entrega gratis. Atención por WhatsApp.</p>
+                <a href="https://api.whatsapp.com/send/?phone=5212211276404&text&type=phone_number&app_absent=0"
+                    target="_blank"><button class="btn btn-primary">Descubre Nuestros Servicios</button></a>
             </div>
         </div>
     </section>
@@ -109,40 +142,47 @@
         <div class="benefits-grid">
             <div class="card">
                 <i class="fas fa-rocket fa-3x"></i>
-                <h3>Recolección y Entrega Gratis en Puebla</h3>
-                <p>Desde el Zócalo hasta Angelópolis, pasamos por tu ropa sin costo alguno y la devolvemos limpia, seca
-                    y doblada directamente a tu puerta.</p> <br>
-                <a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0"
+                <h3>Lavado de ropa personal</h3>
+                <p>Tu ropa lista sin mover un dedo. Lavamos, secamos y planchamos por ti.</p> <br>
+                <a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0" target="_blank"
                     class="btn btn-primary">Agenda tu recolección</a>
             </div>
             <div class="card">
                 <i class="fas fa-rocket fa-3x"></i>
-                <h3>Cuidado Premium con Productos Eco</h3>
-                <p>Cada prenda recibe un tratamiento profesional con detergentes biodegradables y procesos que cuidan tu
-                    piel y protegen el medio ambiente.</p><br>
-                <a href="https://maps.app.goo.gl/LVbz2hsLTwNgQoyF8" class="btn btn-primary">Descubre nuestro proceso</a>
+                <h3>Lavado familiar y de hogar</h3>
+                <p>Desde sábanas hasta uniformes escolares. Todo limpio, suave y bien doblado.</p><br>
+                <a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0" target="_blank"
+                    class="btn btn-primary">Descubre nuestro proceso</a>
             </div>
             <div class="card">
                 <i class="fas fa-rocket fa-3x"></i>
-                <h3>Limpieza Express en Menos de 24 hrs</h3>
-                <p>Tu ropa lista en tiempo récord: lavada, seca y doblada en menos de 24 horas para que no pierdas ni un
-                    minuto de tu día.</p><br>
-                <a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0"
+                <h3>Recolección y entrega gratis</h3>
+                <p>Nosotros vamos por tu ropa y te la llevamos de regreso limpia y planchada. Sin costo extra.</p><br>
+                <a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0" target="_blank"
                     class="btn btn-primary">Solicita servicio express</a>
             </div>
         </div>
     </section>
 
     <!-- 3. Acerca de -->
-    <section class="about-section">
+    <section class="about-section" id="about">
         <div class="about-image">
             <img src="assets/img/page/nosotros_2.png" alt="Equipo" style="width:80%; height: 50%;">
         </div>
         <div class="about-content">
-            <h2>Amor por tu Tela</h2>
-            <p>Tratamos cada tejido como un tesoro: ajustamos el programa y la temperatura para prolongar la vida de tu
-                ropa favorita y mantener sus colores vivos. 💦✨</p>
-            <button class="btn btn-primary">Descubre nuestro proceso</button>
+            <h2>¿Qué es RapiClean?</h2>
+            <p>Lavandería a domicilio para gente con mil cosas por hacer. RapiClean es un servicio 100% en línea para
+                quienes prefieren dedicar su tiempo a lo importante.</p>
+            <ul>
+                <li>✔️ Sin salir de casa</li>
+                <li>✔️ Con atención humana por WhatsApp</li>
+                <li>✔️ Pagas fácil desde nuestra web</li>
+            </ul>
+            <a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0" target="_blank"><button
+                    class="btn btn-primary">Chatea con nosotros por
+                    WhatsApp</button></a>
+            <a href="registro.html"><button class="btn btn-primary">Comienza tu
+                    pedido</button></a>
         </div>
     </section>
 
@@ -154,60 +194,34 @@
                 <div class="card-img">
                     <img src="assets/img/page/servicio_1.png" alt="">
                 </div>
-                <h3>Planchado que Inspira</h3>
+                <h3>Lavado de ropa personal</h3>
                 <ul>
-                    <li>Siente ese toque de frescura cada vez que te pones tu prenda favorita; nuestro planchado a vapor
-                        realza texturas y colores, como un amanecer poblano.</li>
+                    <li>Tu ropa lista sin mover un dedo. Lavamos, secamos y planchamos por ti.</li>
                 </ul>
+                <a href="catalogo.html"><button class="btn btn-primary">Ir Servicios</button></a>
             </div>
             <div class="card">
                 <div class="card-img">
                     <img src="assets/img/page/servicio_2.png" alt="">
                 </div>
-                <h3>Ajustes a Tu Medida</h3>
+                <h3>Lavado familiar y de hogar</h3>
                 <ul>
-                    <li>Cada dobladillo y costura se hace con paciencia y oficio; adaptamos tu ropa al cuerpo y al
-                        estilo que te define, manteniendo viva tu esencia poblana.</li>
+                    <li>Desde sábanas hasta uniformes escolares. Todo limpio, suave y bien doblado.</li>
                 </ul>
+                <a href="catalogo.html"><button class="btn btn-primary">Ir Servicios</button></a>
             </div>
             <div class="card">
                 <div class="card-img">
                     <img src="assets/img/page/servicio_3.png" alt="">
                 </div>
-                <h3>Lavado que Renueva</h3>
+                <h3>Recolección y entrega gratis</h3>
                 <ul>
-                    <li>Eliminamos manchas y malos olores para que tu ropa brille como un día soleado en Angelópolis; la
-                        frescura de Puebla va en cada lavado.</li>
+                    <li>Nosotros vamos por tu ropa y te la llevamos de regreso limpia y planchada. Sin costo extra.</li>
                 </ul>
+                <a href="catalogo.html"><button class="btn btn-primary">Ir Servicios</button></a>
             </div>
         </div>
     </section>
-
-    <!-- 5. Ventajas-->
-    <!-- <section class="advantages-grid">
-        <h2 class="section-title">Nuestras Ventajas</h2>
-        <div class="benefits-grid">
-            <div class="card">
-                <i class="fas fa-medal fa-2x"></i>
-                <h3>La forma más rápida y cómoda de lavar tu ropa</h3>
-                <p>Olvídate de perder tiempo lavando, nosotros lo hacemos por ti.</p><br>
-                <a class="btn btn-primary" href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0">Pruébalo hoy mismo</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-medal fa-2x"></i>
-                <h3>Servicio de lavandería confiable y accesible</h3>
-                <p>Calidad profesional con precios justos y sin complicaciones.</p><br>
-                <a class="btn btn-primary" href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0">Consulta nuestras tarifas</a>
-            </div>
-            <div class="card">
-                <i class="fas fa-medal fa-2x"></i>
-                <h3>Más que una lavandería: Tintorería y costura en un solo lugar</h3>
-                <p>Descubre nuestros servicios adicionales</p><br>
-                <a class="btn btn-primary" href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0">Pruébalo hoy mismo </a>
-            </div>
-        </div>
-         
-    </section> -->
 
     <!-- 6. Testimonios-->
     <section class="testimonials-section">
@@ -215,40 +229,42 @@
         <div class="testimonial-carousel">
             <div class="card">
                 <i class="fas fa-user fa-2x"></i>
-                <p>"Mi ropa siempre queda impecable y lista a tiempo. ¡Los recomiendo!"</p>
-                <h4>Cliente Satisfecho</h4>
+                <p>"Antes me costaba organizar mi semana, ahora RapiClean me da tiempo para mí."</p>
+                <h4>- Ana</h4>
             </div>
             <div class="card">
                 <i class="fas fa-user fa-2x"></i>
-                <p>"Como estudiante, no tengo tiempo de lavar, ¡Rapiclean me ha salvado!"</p>
-                <h4>Cliente Satisfecho</h4>
+                <p>"Lo vale. Mi ropa llegó mejor doblada que cuando la compré."</p>
+                <h4>- Jorge</h4>
             </div>
             <div class="card">
                 <i class="fas fa-user fa-2x"></i>
-                <p>"El planchado es perfecto, siempre listo para mi oficina."</p>
-                <h4>Cliente Satisfecho</h4>
+                <p>"No pensé que un servicio de lavandería me ahorrara tanto estrés."</p>
+                <h4>- Mariana</h4>
             </div>
             <div class="card">
                 <i class="fas fa-user fa-2x"></i>
                 <p>"Ropa limpia sin preocupaciones, ¡el mejor servicio!"</p>
-                <h4>Cliente Satisfecho</h4>
+                <h4>- Aldahir</h4>
             </div>
             <!-- Agregar más testimonios -->
         </div>
     </section>
 
     <!-- 7. Formulario CTA, MAP's -->
-    <section class="final-cta">
+    <section class="final-cta" id="contact-info">
         <div class="contact-info">
             <h3 class="section-title">Contacto</h3>
             <div class="container">
                 <p>Email : austintv52@gmail.com</p>
                 <p>Telefono : +52 221 127 64 04</p>
                 <form class="cta-form" id="formularioContacto">
-                    <h2>¡Comienza Ahora!</h2>
+                    <h2>¿Tienes dudas? Escríbenos y te respondemos al momento.</h2>
                     <input type="text" placeholder="Ingresa tu nombre" id="nombre" name="nombre">
-                    <input type="text" placeholder="Ingresa tu apellido paterno" id="apellidoPaterno" name="apellidoPaterno">
-                    <input type="text" placeholder="Ingresa tu apellido materno" id="apellidoMaterno" name="apellidoMaterno">
+                    <input type="text" placeholder="Ingresa tu apellido paterno" id="apellidoPaterno"
+                        name="apellidoPaterno">
+                    <input type="text" placeholder="Ingresa tu apellido materno" id="apellidoMaterno"
+                        name="apellidoMaterno">
                     <input type="text" placeholder="Ingresa tu telefono" id="telefono" name="telefono">
                     <input type="email" placeholder="Ingresa tu email" id="correo" name="correo">
                     <input type="text" placeholder="Ingresa el asunto" id="asunto" name="asunto">
@@ -257,11 +273,13 @@
                 </form>
             </div>
         </div>
-        <div class="container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.028072479301!2d-98.21571552456112!3d18.97436758220942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf37faa0076d%3A0xc2c6fefcb84ad40!2sdigiceo!5e0!3m2!1sen!2smx!4v1739131207453!5m2!1sen!2smx"
-                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <br class="container" style="margin-top: 100px !important;">
+        <span>ubicación física exclusivamente para atención a clientes, quejas y sugerencias.</span>
+        <hr>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.028072479301!2d-98.21571552456112!3d18.97436758220942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfbf37faa0076d%3A0xc2c6fefcb84ad40!2sdigiceo!5e0!3m2!1sen!2smx!4v1739131207453!5m2!1sen!2smx"
+            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
@@ -273,63 +291,70 @@
                 <!-- Pregunta 1 -->
                 <div class="faq-card">
                     <i class="fas fa-question fa-2x"></i>
-                    <h4>¿Cuánto tiempo tarda el servicio de lavado y secado?</h4>
-                    <p>Nuestro servicio estándar tiene un tiempo de entrega de 24 horas. Si necesitas tu ropa antes,
-                        consulta por nuestro servicio express.</p>
-                    <a href="#contacto" class="btn btn-small">Pregunta por nuestro servicio express</a>
+                    <h4>¿Cómo solicito un servicio?</h4>
+                    <p>Entra a nuestra web, elige tu servicio y agenda tu recolección. Todo desde tu celular.</p>
+                    <a href="https://wa.me/5212211276404" target="_blank" class="btn btn-small">Solitar Servicio
+                        WhatsApp</a>
+                    <a href="registro.html" class="btn btn-small">Solitar Servicio Web</a>
                 </div>
 
                 <!-- Pregunta 2 -->
                 <div class="faq-card">
                     <i class="fas fa-question fa-2x"></i>
-                    <h4>¿Qué tipo de ropa puedo lavar con ustedes?</h4>
-                    <p>Lavamos desde ropa del día a día hasta prendas delicadas, edredones y ropa deportiva. Si tienes
-                        dudas, contáctanos.</p>
-                    <a href="#prendas" class="btn btn-small">Consulta qué prendas aceptamos</a>
+                    <h4>¿Dónde operan?</h4>
+                    <p>En todo la Zona Sur de Puebla. Recolección y entrega GRATIS en tu domicilio.</p>
+                    <a href="https://wa.me/5212211276404" target="_blank" class="btn btn-small">Solicita tú
+                        Recolección</a>
                 </div>
 
                 <!-- Pregunta 3 -->
                 <div class="faq-card">
                     <i class="fas fa-question fa-2x"></i>
-                    <h4>¿Usan productos hipoalergénicos o biodegradables?</h4>
-                    <p>Sí, contamos con detergentes amigables con el medio ambiente y opciones hipoalergénicas. ¡Solo
-                        avísanos al dejar tu ropa!</p>
-                    <a href="#ecologico" class="btn btn-small">Pregunta por nuestras opciones ecológicas</a>
+                    <h4>¿Cuánto cuesta el servicio?</h4>
+                    <p>Consulta precios actualizados en nuestra web. ¡Elige lo que necesitas y paga en línea!</p>
+                    <a href="catalogo.html" class="btn btn-small">Catálogo de Servicios</a>
                 </div>
 
                 <!-- Pregunta 4 -->
                 <div class="faq-card">
                     <i class="fas fa-question fa-2x"></i>
-                    <h4>¿Cómo calculan el precio del servicio?</h4>
-                    <p>Nuestro servicio se cobra por kilo de ropa. También tenemos planes especiales para clientes
-                        frecuentes.</p>
-                    <a href="#tarifas" class="btn btn-small">Consulta nuestras tarifas y promociones</a>
+                    <h4>¿Cómo pago?</h4>
+                    <p>Puedes pagar con tarjeta o transferencia al finalizar tu solicitud en línea..</p>
+                    <a href="catalogo.html" class="btn btn-small">Catálogo de Servicios</a>
                 </div>
 
                 <!-- Pregunta 5 -->
                 <div class="faq-card">
                     <i class="fas fa-question fa-2x"></i>
-                    <h4>¿Debo separar mi ropa por colores o tipos de tela?</h4>
-                    <p>No es necesario. Nuestro equipo se encarga de clasificarla para garantizar el mejor cuidado en el
-                        lavado.</p>
-                    <a href="#cuidado" class="btn btn-small">Conoce cómo cuidamos tu ropa</a>
+                    <h4>¿Qué tipo de ropa reciben?</h4>
+                    <p>Todo tipo: ropa personal, de cama, uniformes, toallas y más.</p>
+                    <a href="catalogo.html" class="btn btn-small">Catálogo de Servicios</a>
                 </div>
 
                 <!-- Pregunta 6 -->
                 <div class="faq-card">
                     <i class="fas fa-question fa-2x"></i>
-                    <h4>¿Tienen servicio a domicilio?</h4>
-                    <p>Sí, ofrecemos recolección y entrega en ciertos horarios y zonas. Pregunta por disponibilidad en
-                        tu área.</p>
-                    <a href="#domicilio" class="btn btn-small">Agenda tu recolección</a>
+                    <h4>¿Tienen ubicación física?</h4>
+                    <p>No, somos 100% en línea para solicitar el servicio. Pero contamos con una ubicación física
+                        exclusivamente para atención a clientes, quejas y sugerencias.</p>
+                    <a href="https://maps.app.goo.gl/1MXP5j2gpLTGUMSh8" target="_blank" class="btn btn-small">Conoce
+                        Nuestra Ubicación</a>
                 </div>
             </div>
             <!-- Agregar FAQs -->
         </div>
     </section>
+
     <!-- 9. Footer-->
     <footer>
         <div class="social-links">
+            <p>¿Tu ropa se te acumula?
+                <br> te devuelve tiempo.
+                <br>📲 Agenda tu primer servicio desde la web o por WhatsApp.
+                <br><a href="https://api.whatsapp.com/message/LH5TWCRSG7HSF1?autoload=1&app_absent=0"
+                    target="_blank">+52
+                    2211276404</a>
+            </p>
             <a href="https://www.facebook.com/rapicleanpuebla"><i class="fab fa-facebook"></i></a>
             <a href="https://www.instagram.com/rapicleanpuebla/"><i class="fab fa-instagram"></i></a>
         </div>
@@ -344,7 +369,7 @@
         <a href="https://wa.me/5212211276404" class="whatsapp-btn" target="_blank" title="Contactar por WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
-    </div>    
+    </div>
 
     <script src="assets/js/PaginaWeb.js"></script>
 </body>

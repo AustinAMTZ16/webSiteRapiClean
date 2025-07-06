@@ -676,6 +676,7 @@
             }
         }
     </style>
+    <script src="assets/js/SesionUser.js"></script>
 </head>
 <body>
     <!-- 0. header Top, Logo, Menú -->
@@ -683,7 +684,7 @@
         <div class="header-top">
             <div class="container">
                 <p>
-                    ¿TIENES ALGUNA PREGUNTA?
+                    ¿Cotiza tu servicio?
                     <a href="tel:+522211276404">2211276404</a> /
                     <a href="tel:+522211276404">2211276404</a>
                 </p>
@@ -694,16 +695,33 @@
             <div class="container">
                 <div class="grid">
                     <div class="logo">
-                        <a href="index.html"><img src="logo.png" alt="Logo"></a>
+                        <a href="index.html"><img src="assets/img/logo-icon/logo.png" alt="Logo"></a>
                     </div>
-                    
+
                     <div class="main-menu">
                         <ul class="nav-list">
                             <li><a class="nav-link" href="index.html">Inicio</a></li>
-                            <li><a class="nav-link" href="index.html">Acerca de</a></li>
-                            <li><a class="nav-link" href="#servicios">Servicios</a></li>
-                            <li><a class="nav-link" href="#servicios">Blog</a></li>
+                            <li><a class="nav-link" href="#about">Acerca de</a></li>
+                            <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
                             <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                            <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita tu servicio</a>
+                            </li>
+                            <!-- <li><a class="nav-link btn btn-primary" id="CerrarSesion">Cerrar Sesión</a></li> -->
+                            <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
                         </ul>
                     </div>
 
@@ -721,10 +739,26 @@
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-nav">
                 <li><a class="nav-link" href="index.html">Inicio</a></li>
-                <li><a class="nav-link" href="index.html">Acerca de</a></li>
-                <li><a class="nav-link" href="#servicios">Servicios</a></li>
-                <li><a class="nav-link" href="#servicios">Blog</a></li>
+                <li><a class="nav-link" href="#about">Acerca de</a></li>
+                <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
                 <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita tu servicio</a>
+                            </li>
+                <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
             </div>
         </div>
     </header>

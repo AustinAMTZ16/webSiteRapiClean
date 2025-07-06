@@ -7,6 +7,11 @@
     --text-dark: rgb(0, 0, 0);
     --text-blanco: rgb(255, 255, 255);
     --size-text-menu: 1.5rem;
+
+
+    --sizeHeroCarousel: 34px;
+    --colorBtnCambioCarousel: rgba(0, 0, 0, 0.5);
+    --sizeAboutContent: 23px;
 }
 
 * {
@@ -28,6 +33,13 @@
     text-decoration: none;
 }
 
+.card a.btn {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+}
+
+
 .card-img {
     display: flex;
     justify-content: center;
@@ -46,6 +58,14 @@
     cursor: pointer;
     font-size: 1.1rem;
     transition: all 0.3s ease;
+    margin-top: 10px;
+    display: inline-block;
+    /* 👈 Añade esta línea */
+    white-space: nowrap;
+    /* 👈 Opcional: evita salto de línea */
+    overflow: hidden;
+    /* 👈 Previene desbordamientos */
+    text-overflow: ellipsis;
 }
 
 .btn:hover {
@@ -174,6 +194,7 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
+    font-size: var(--sizeHeroCarousel);
 }
 
 .carousel-slide {
@@ -225,7 +246,7 @@
     z-index: 2;
     background: var(--botones-color);
     border: none;
-    color: var(--text-blanco);
+    color: var(--colorBtnCambioCarousel);
     padding: 1rem;
     cursor: pointer;
     border-radius: 50%;
@@ -235,6 +256,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .carousel-control:hover {
@@ -267,7 +291,24 @@
 
 .about-content {
     text-align: center;
+    font-size: var(--sizeAboutContent);
 }
+
+ul {
+    margin-top: 15px;
+    list-style: none;
+    /* 🔹 Quita los bullets */
+    padding-left: 0;
+    /* 🔹 Elimina indentación izquierda */
+    text-align: left;
+    /* 🔹 Alinea el texto a la derecha */
+}
+
+ul li {
+    margin-bottom: 8px;
+    /* 🔹 Espaciado entre líneas (opcional) */
+}
+
 
 /* Sección Servicios */
 .services {
@@ -723,4 +764,76 @@ footer a {
     .faq-card h4 {
         font-size: 1rem;
     }
+}
+
+
+/* Permitir que el texto se ajuste en las celdas */
+table.dataTable th,
+table.dataTable td {
+    white-space: normal !important;
+    word-wrap: break-word;
+    word-break: break-word;
+    vertical-align: top;
+}
+
+/* Permitir redimensionamiento manual del encabezado */
+table.dataTable th {
+    resize: horizontal;
+    /* overflow: auto; */
+    min-width: 100px;
+    max-width: 600px;
+}
+
+/* Forzar que las celdas se ajusten al contenedor si hay scroll */
+.dataTables_wrapper,
+.table-responsive {
+    overflow-x: auto;
+}
+
+
+
+.cantidad-control {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.cantidad-control input[type="number"] {
+    width: 60px;
+    height: 40px;
+    font-size: 1.2rem;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-mas,
+.btn-menos {
+    width: 40px;
+    height: 40px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-mas {
+    background-color: #28a745;
+    /* verde */
+}
+
+.btn-menos {
+    background-color: #dc3545;
+    /* rojo */
+}
+
+.btn-mas:hover {
+    background-color: #218838;
+}
+
+.btn-menos:hover {
+    background-color: #c82333;
 }

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Iniciar Sesión - RapiClean</title>
+  <meta name="description"
+    content="Lavandería RapiClean Puebla: servicio profesional de lavado, planchado, costura y tintorería. Recolección y entrega. Calidad garantizada.">
+  <meta name="keywords"
+    content="lavandería en Puebla, lavado de ropa, planchado profesional, tintorería, RapiClean, servicio a domicilio">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="RapiClean Puebla">
+  <meta name="language" content="es">
+  <meta name="theme-color" content="#00aeef">
+  <link rel="shortcut icon" href="assets/img/logo-icon/logopequemas.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/SesionUser.js"></script>
+  <!-- CDN de DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #faf6f6;
+      text-align: center;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 400px;
+      margin: auto;
+      border-left: 8px solid #0099ff;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background-color: #ffc400;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    .mensaje-error {
+      color: red;
+      margin-top: 1rem;
+    }
+  </style>
+
+  <script src="assets/js/SesionUser.js"></script>
+</head>
+
+<body>
+    <!-- 0. header Top, Logo, Menú -->
+    <header class="top">
+        <div class="header-top">
+            <div class="container">
+                <p>
+                    ¿Cotiza tu servicio?
+                    <a href="tel:+522211276404">2211276404</a> /
+                    <a href="tel:+522211276404">2211276404</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="header-area">
+            <div class="container">
+                <div class="grid">
+                    <div class="logo">
+                        <a href="index.html"><img src="assets/img/logo-icon/logo.png" alt="Logo"></a>
+                    </div>
+
+                    <div class="main-menu">
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li><a class="nav-link" href="#about">Acerca de</a></li>
+                            <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
+                            <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                            <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita tu servicio</a>
+                            </li>
+                            <!-- <li><a class="nav-link btn btn-primary" id="CerrarSesion">Cerrar Sesión</a></li> -->
+                            <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Menú hamburguesa móvil -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-nav">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="#about">Acerca de</a></li>
+                <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
+                <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita tu servicio</a>
+                            </li>
+                <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
+            </div>
+        </div>
+    </header>
+
+  <h1>🔐 Iniciar Sesión</h1>
+  <span>Ingresa con tu cuenta para ver tus pedidos y avanzar al pago.</span>
+  <div class="form-container">
+    <label for="user">Coloque su Telefono ó Correo electrónico</label>
+    <input type="email" id="email" placeholder="Telefono ó Correo electrónico" required>
+    <label for="password">Coloque su clave de acceso</label>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <button onclick="iniciarSesion()">Ingresar</button>
+    <p class="mensaje-error" id="mensajeError"></p>
+  </div>
+
+  <script>
+    async function iniciarSesion() {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const mensaje = document.getElementById("mensajeError");
+
+      mensaje.textContent = ""; // limpiar error anterior
+
+      try {
+        const res = await fetch("https://app.rapicleanpuebla.com/index.php?action=iniciarSesion", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+
+          body: JSON.stringify({ Email: email, Password: password })
+        });
+
+        const data = await res.json();
+        console.log("🔐 Respuesta de inicio de sesión:", data);
+
+        if (data.message === "Usuario logueado.") {
+          // Almacenar los datos del usuario en localStorage
+          localStorage.setItem('usuario', JSON.stringify(data.data));
+
+          window.location.href = "catalogo.html";
+        } else {
+          mensaje.textContent = "❌ Credenciales incorrectas.";
+        }
+
+      } catch (error) {
+        console.error("❌ Error al iniciar sesión:", error);
+        mensaje.textContent = "Error al conectar con el servidor.";
+      }
+    }
+  </script>
+
+  <!-- 9. Footer-->
+  <footer>
+    <div class="social-links">
+      <a href="https://www.facebook.com/rapicleanpuebla"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/rapicleanpuebla/"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>© 2025 Todos los derechos reservados</p>
+  </footer>
+
+  <div class="float-buttons">
+    <a href="#" class="back-to-top" title="Volver al inicio">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <a href="https://wa.me/5212211276404" class="whatsapp-btn" target="_blank" title="Contactar por WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+  <script src="assets/js/PaginaWeb.js"></script>
+</body>
+
+</html>

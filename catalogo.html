@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Catálogo de Servicios - RapiClean</title>
+    <meta name="description"
+        content="Lavandería RapiClean Puebla: servicio profesional de lavado, planchado, costura y tintorería. Recolección y entrega. Calidad garantizada.">
+    <meta name="keywords"
+        content="lavandería en Puebla, lavado de ropa, planchado profesional, tintorería, RapiClean, servicio a domicilio">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="RapiClean Puebla">
+    <meta name="language" content="es">
+    <meta name="theme-color" content="#00aeef">
+    <link rel="shortcut icon" href="assets/img/logo-icon/logopequemas.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/SesionUser.js"></script>
+
+    <!-- CDN de DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/SesionUser.js"></script>
+</head>
+
+<body>
+    <!-- 0. header Top, Logo, Menú -->
+    <header class="top">
+        <div class="header-top">
+            <div class="container">
+                <p>
+                    ¿Cotiza tu servicio?
+                    <a href="tel:+522211276404">2211276404</a> /
+                    <a href="tel:+522211276404">2211276404</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="header-area">
+            <div class="container">
+                <div class="grid">
+                    <div class="logo">
+                        <a href="index.html"><img src="assets/img/logo-icon/logo.png" alt="Logo"></a>
+                    </div>
+
+                    <div class="main-menu">
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li><a class="nav-link" href="#about">Acerca de</a></li>
+                            <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
+                            <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                            <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita
+                                    tu servicio</a>
+                            </li>
+                            <!-- <li><a class="nav-link btn btn-primary" id="CerrarSesion">Cerrar Sesión</a></li> -->
+                            <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html"
+                                    style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Menú hamburguesa móvil -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-nav">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="#about">Acerca de</a></li>
+                <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
+                <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita
+                        tu servicio</a>
+                </li>
+                <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html"
+                        style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
+            </div>
+        </div>
+    </header>
+
+    <section class="final-cta">
+        <div class="container">
+            <h3>🧺 Carrito de Compras</h3>
+            <div id="carrito-contenedor"></div>
+        </div>
+        <div class="container">
+            <div class="grid" style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 class="section-title">Catálogo de Servicios y Carrito</h2>
+                <a href="pedido.html" class="btn btn-primary">🛒 Ir al Carrito</a>
+            </div>
+            <div id="contenedorTarjetas" class="services-grid"></div>
+        </div>
+    </section>
+
+    <!-- 9. Footer-->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/rapicleanpuebla"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/rapicleanpuebla/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© 2025 Todos los derechos reservados</p>
+    </footer>
+
+    <div class="float-buttons">
+        <a href="#" class="back-to-top" title="Volver al inicio">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
+        <a href="https://wa.me/5212211276404" class="whatsapp-btn" target="_blank" title="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <script src="assets/js/PaginaWeb.js"></script>
+
+    <script>
+        async function cargarServiciosTarjetas() {
+            try {
+                const res = await fetch('https://app.rapicleanpuebla.com/index.php?action=listaServicios');
+                const json = await res.json();
+                const servicios = json.data;
+                const contenedor = document.getElementById("contenedorTarjetas");
+
+                contenedor.innerHTML = "";
+                servicios.forEach(servicio => {
+                    const card = document.createElement("div");
+                    card.classList.add("card");
+
+                    card.innerHTML = `
+                        <h3>${servicio.NombreServicio}</h3>
+                        <p>${servicio.DescripcionServicio}</p>
+                        <p><strong>$${parseFloat(servicio.Precio).toFixed(2)}</strong></p>
+                        <div class="cantidad-control">
+                            <button class="btn-menos" onclick="cambiarCantidad(${servicio.ServicioID}, -1)">−</button>
+                            <input type="number" id="cant-${servicio.ServicioID}" value="1" min="1">
+                            <button class="btn-mas" onclick="cambiarCantidad(${servicio.ServicioID}, 1)">+</button>
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" onclick="agregarAlCarrito(${servicio.ServicioID}, '${servicio.NombreServicio}', ${servicio.Precio})">Agregar al carrito</button>
+                    `;
+                    contenedor.appendChild(card);
+                });
+            } catch (err) {
+                console.error("Error:", err);
+                alert("No se pudieron cargar los servicios.");
+            }
+        }
+
+        function cambiarCantidad(id, delta) {
+            const input = document.getElementById(`cant-${id}`);
+            let cantidad = parseInt(input.value) || 0;
+            cantidad += delta;
+            cantidad = Math.max(0, cantidad);
+            input.value = cantidad;
+
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const idx = carrito.findIndex(x => x.id === id);
+
+            if (cantidad === 0) {
+                // Si la cantidad es 0, eliminar del carrito si existe
+                if (idx >= 0) {
+                    carrito.splice(idx, 1);
+                }
+            } else {
+                // Si ya está en el carrito, actualiza
+                if (idx >= 0) {
+                    carrito[idx].cantidad = cantidad;
+                } else {
+                    // Si no está, agregarlo
+                    const nombre = document.getElementById(`nombre-${id}`).textContent;
+                    const precio = parseFloat(document.getElementById(`precio-${id}`).textContent.replace('$', ''));
+                    carrito.push({ id, nombre, precio, cantidad });
+                }
+            }
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            renderizarCarrito();
+        }
+
+
+        function agregarAlCarrito(id, nombre, precio) {
+            const cantidad = parseInt(document.getElementById(`cant-${id}`).value);
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const idx = carrito.findIndex(x => x.id === id);
+
+            if (idx >= 0) carrito[idx].cantidad += cantidad;
+            else carrito.push({ id, nombre, precio, cantidad });
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            renderizarCarrito();
+        }
+
+        function eliminarDelCarrito(id) {
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            carrito = carrito.filter(x => x.id !== id);
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            renderizarCarrito();
+        }
+
+        function renderizarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+            const contenedor = document.getElementById("carrito-contenedor");
+
+            if (carrito.length === 0) {
+                contenedor.innerHTML = "<p>🛒 No hay servicios en el carrito.</p>";
+                return;
+            }
+
+            let html = `<table class="display" style="width:100%"><thead><tr>
+                <th>Servicio</th><th>Cantidad</th><th>Precio</th><th>Subtotal</th><th>Quitar</th>
+            </tr></thead><tbody>`;
+
+            carrito.forEach(item => {
+                html += `<tr>
+                    <td>${item.nombre}</td>
+                    <td>${item.cantidad}</td>
+                    <td>$${item.precio.toFixed(2)}</td>
+                    <td>$${(item.precio * item.cantidad).toFixed(2)}</td>
+                    <td><button onclick="eliminarDelCarrito(${item.id})" class="btn-small">❌</button></td>
+                </tr>`;
+            });
+
+            html += "</tbody></table>";
+            contenedor.innerHTML = html;
+        }
+
+        cargarServiciosTarjetas();
+        renderizarCarrito();
+    </script>
+</body>
+
+
+</html>

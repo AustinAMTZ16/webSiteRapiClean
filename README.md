@@ -45,3 +45,14 @@ Este proyecto forma parte de la plataforma RapiClean, un servicio de lavandería
 - Seguimiento de pedidos por ID o correo
 - Implementar historial de pedidos para clientes
 - Mejora en control de stock e inventario
+
+
+
+├── registro.html # Vista de registro de cliente
+├── catalogo.html # Catálogo de servicios disponibles
+├── pedido.html # Confirmación y método de pago
+├── tiendaOnline.js # JS principal para el flujo web
+├── php/
+│ ├── registrarCliente.php # Backend para registro de clientes
+│ ├── listaServicios.php # Backend para obtener servicios
+│ └── registrarVenta.php # Backend para registrar pedidos

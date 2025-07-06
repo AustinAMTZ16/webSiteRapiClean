@@ -1,0 +1,336 @@
+<!-- perfil.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Perfil de Cliente</title>
+    <meta name="description"
+        content="Lavandería RapiClean Puebla: servicio profesional de lavado, planchado, costura y tintorería. Recolección y entrega. Calidad garantizada.">
+    <meta name="keywords"
+        content="lavandería en Puebla, lavado de ropa, planchado profesional, tintorería, RapiClean, servicio a domicilio">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="RapiClean Puebla">
+    <meta name="language" content="es">
+    <meta name="theme-color" content="#00aeef">
+    <link rel="shortcut icon" href="assets/img/logo-icon/logopequemas.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- jQuery primero -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Luego DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/SesionUser.js"></script>
+    <style>
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 10px #ccc;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .info p {
+            margin: 0.25rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background: #f2f2f2;
+        }
+
+        tr:hover {
+            background: #fafafa;
+        }
+
+
+        /* Permitir que el texto se ajuste en las celdas */
+        table.dataTable th,
+        table.dataTable td {
+            white-space: normal !important;
+            word-wrap: break-word;
+            word-break: break-word;
+            vertical-align: top;
+        }
+
+        /* Permitir redimensionamiento manual del encabezado */
+        table.dataTable th {
+            resize: horizontal;
+            /* overflow: auto; */
+            min-width: 100px;
+            max-width: 600px;
+        }
+
+        /* Forzar que las celdas se ajusten al contenedor si hay scroll */
+        .dataTables_wrapper,
+        .table-responsive {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 0. header Top, Logo, Menú -->
+    <header class="top">
+        <div class="header-top">
+            <div class="container">
+                <p>
+                    ¿Cotiza tu servicio?
+                    <a href="tel:+522211276404">2211276404</a> /
+                    <a href="tel:+522211276404">2211276404</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="header-area">
+            <div class="container">
+                <div class="grid">
+                    <div class="logo">
+                        <a href="index.html"><img src="assets/img/logo-icon/logo.png" alt="Logo"></a>
+                    </div>
+
+                    <div class="main-menu">
+                        <ul class="nav-list">
+                            <li><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li><a class="nav-link" href="#about">Acerca de</a></li>
+                            <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
+                            <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                            <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita
+                                    tu servicio</a>
+                            </li>
+                            <!-- <li><a class="nav-link btn btn-primary" id="CerrarSesion">Cerrar Sesión</a></li> -->
+                            <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html"
+                                    style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Menú hamburguesa móvil -->
+                    <div class="hamburger" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú móvil -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-nav">
+                <li><a class="nav-link" href="index.html">Inicio</a></li>
+                <li><a class="nav-link" href="#about">Acerca de</a></li>
+                <li><a class="nav-link" href="catalogo.html">Servicios</a></li>
+                <li><a class="nav-link" href="#contacto">Contacto</a></li>
+                <li><a class="nav-link btn-primary" id="Registrarse" href="registro.html" style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Solicita
+                        tu servicio</a>
+                </li>
+                <li><a class="nav-link btn-primary" id="Perfil" href="perfil.html"
+                        style="
+                                                                                                                border-radius: 10px;
+                                                                                                                display: inline-block;
+                                                                                                                white-space: nowrap;
+                                                                                                                vertical-align: middle;
+                                                                                                                padding: 10px 20px;
+                                                                                                                margin-left: 10px;
+                                                                                                            ">Perfil</a></li>
+            </div>
+        </div>
+    </header>
+
+    <div class="card">
+        <h2>👤 Perfil del Cliente</h2>
+        <div id="infoUsuario" class="info">Cargando datos...</div>
+
+        <div style="text-align: right; margin-top: 10px;">
+            <button id="Servicios" class="btn btn-danger"><a href="catalogo.html">Solicitar Servicio</a></button>
+            <button id="CerrarSesion" class="btn btn-danger">Cerrar Sesión</button>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h2>🧾 Historial de Compras</h2>
+        <table id="tablaVentas" class="table table-bordered table-hover display nowrap"
+                style="width:100%; table-layout: auto;">
+            <thead>
+                <tr>
+                    <th>Venta ID</th>
+                    <th>Fecha</th>
+                    <th>Servicio</th>
+                    <th>Estado</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    const info = document.getElementById("infoUsuario");
+    const tbody = document.querySelector("#tablaVentas tbody");
+
+    if (usuario) {
+        info.innerHTML = `
+            <p><strong>ID:</strong> ${usuario.ClienteID}</p>
+            <p><strong>Nombre:</strong> ${usuario.Nombre}</p>
+            <p><strong>Email:</strong> ${usuario.Email}</p>
+            <p><strong>Estado:</strong> ${usuario.Estado}</p>
+            <p><strong>Puntos:</strong> ${usuario.PuntosRecompensa}</p>
+        `;
+
+        fetch("https://app.rapicleanpuebla.com/index.php?action=listarVentas", {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+        })
+        .then(res => res.json())
+        .then(data => {
+            const ventasCliente = data.data.filter(v => v.ClienteID == usuario.ClienteID);
+
+            // Agrupar por VentaID
+            const ventasAgrupadas = {};
+
+            ventasCliente.forEach(v => {
+                if (!ventasAgrupadas[v.VentaID]) {
+                    ventasAgrupadas[v.VentaID] = {
+                        VentaID: v.VentaID,
+                        Fecha: v.Fecha,
+                        Servicio: v.Servicio,
+                        EstadoVenta: v.EstadoVenta,
+                        Subtotal: parseFloat(v.Subtotal)
+                    };
+                } else {
+                    ventasAgrupadas[v.VentaID].Subtotal += parseFloat(v.Subtotal);
+                    ventasAgrupadas[v.VentaID].Servicio += " + " + v.Servicio;
+                }
+            });
+
+            // Pintar tabla
+            Object.values(ventasAgrupadas).forEach(v => {
+                tbody.innerHTML += `
+                    <tr>
+                        <!--td>
+                            <button class="btn btn-primary" onclick="window.location.href='gracias.html?action=detalleVenta&ventaID=${v.VentaID}'">Ver Detalles</button>
+                        </!td-->
+                        <td>${v.VentaID}</td>
+                        <td>${v.Fecha}</td>
+                        <td>${v.Servicio}</td>
+                        <td>${v.EstadoVenta}</td>
+                        <td>$${v.Subtotal.toFixed(2)}</td>
+                    </tr>
+                `;
+            });
+
+            // Inicializa DataTable
+            $('#tablaVentas').DataTable({
+                pageLength: 5,
+                lengthMenu: [[5, 10, 50, 100, -1], [5, 10, 50, 100, "Todos"]],
+                responsive: true,
+                order: [[1, "desc"]],
+                paging: true,
+                searching: true,
+                ordering: true,
+                info: true,
+                language: {
+                    processing: "Procesando...",
+                    search: "Buscar:",
+                    lengthMenu: "Mostrar _MENU_ registros",
+                    info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                    infoEmpty: "Mostrando 0 a 0 de 0 registros",
+                    infoFiltered: "(filtrado de _MAX_ registros totales)",
+                    loadingRecords: "Cargando...",
+                    zeroRecords: "No se encontraron resultados",
+                    emptyTable: "No hay datos disponibles en la tabla",
+                    paginate: {
+                        first: "Primero",
+                        previous: "Anterior",
+                        next: "Siguiente",
+                        last: "Último"
+                    },
+                    aria: {
+                        sortAscending: ": Activar para ordenar ascendente",
+                        sortDescending: ": Activar para ordenar descendente"
+                    }
+                }
+            });
+        })
+        .catch(err => {
+            tbody.innerHTML = `<tr><td colspan="6">❌ Error al cargar ventas.</td></tr>`;
+            console.error(err);
+        });
+
+    } else {
+        info.innerHTML = `<p>❌ No hay sesión activa.</p>`;
+    }
+});
+
+    </script>
+
+    <!-- 9. Footer-->
+    <footer>
+        <div class="social-links">
+            <a href="https://www.facebook.com/rapicleanpuebla"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/rapicleanpuebla/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>© 2025 Todos los derechos reservados</p>
+    </footer>
+
+    <div class="float-buttons">
+        <a href="#" class="back-to-top" title="Volver al inicio">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+
+        <a href="https://wa.me/5212211276404" class="whatsapp-btn" target="_blank" title="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="assets/js/PaginaWeb.js"></script>
+</body>
+
+</html>
